@@ -36,178 +36,143 @@
             border-radius: 9999px;
         }
 
-        <!-- REFINED RUNWAY STAGE & FANS BLOCK -->
-<style>
-  /* Runway Stage Environment */
-  .runway-stage-container {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    padding-bottom: 20px;
-  }
+        /* Runway Stage Environment */
+        .runway-stage-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0d0d1a 0%, #1a1a2e 100%);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-end;
+            padding-bottom: 20px;
+        }
 
-  /* Overhead Spotlight Beams */
-  .spotlights {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60%;
-    pointer-events: none;
-    background: 
-      radial-gradient(ellipse at 30% 0%, rgba(255, 105, 180, 0.25) 0%, transparent 70%),
-      radial-gradient(ellipse at 70% 0%, rgba(0, 245, 255, 0.25) 0%, transparent 70%);
-    animation: beamSway 4s ease-in-out infinite alternate;
-  }
+        /* Overhead Spotlight Beams */
+        .spotlights {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 60%;
+            pointer-events: none;
+            background: 
+                radial-gradient(ellipse at 30% 0%, rgba(255, 105, 180, 0.25) 0%, transparent 70%),
+                radial-gradient(ellipse at 70% 0%, rgba(0, 245, 255, 0.25) 0%, transparent 70%);
+            animation: beamSway 4s ease-in-out infinite alternate;
+        }
 
-  @keyframes beamSway {
-    0% { transform: scaleX(0.9); opacity: 0.8; }
-    100% { transform: scaleX(1.1); opacity: 1; }
-  }
+        @keyframes beamSway {
+            0% { transform: scaleX(0.9); opacity: 0.8; }
+            100% { transform: scaleX(1.1); opacity: 1; }
+        }
 
-  /* Catwalk Floor (Perspective View) */
-  .catwalk-floor {
-    position: absolute;
-    bottom: 0;
-    width: 45%;
-    height: 65%;
-    background: linear-gradient(180deg, #111 0%, #222 100%);
-    clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
-    border-top: 3px solid #ff2a85;
-    box-shadow: 0 0 30px rgba(255, 42, 133, 0.4);
-  }
+        /* Catwalk Floor (Perspective View) */
+        .catwalk-floor {
+            position: absolute;
+            bottom: 0;
+            width: 45%;
+            height: 65%;
+            background: linear-gradient(180deg, #111 0%, #222 100%);
+            clip-path: polygon(30% 0%, 70% 0%, 100% 100%, 0% 100%);
+            border-top: 3px solid #ff2a85;
+            box-shadow: 0 0 30px rgba(255, 42, 133, 0.4);
+        }
 
-  /* Glowing Runway Center Stripe */
-  .catwalk-stripe {
-    position: absolute;
-    top: 0;
-    left: 48%;
-    width: 4%;
-    height: 100%;
-    background: linear-gradient(180deg, #ff2a85, #00f5ff);
-    opacity: 0.8;
-  }
+        /* Glowing Runway Center Stripe */
+        .catwalk-stripe {
+            position: absolute;
+            top: 0;
+            left: 48%;
+            width: 4%;
+            height: 100%;
+            background: linear-gradient(180deg, #ff2a85, #00f5ff);
+            opacity: 0.8;
+        }
 
-  /* Walking & Strutting Model Animation */
-  .runway-model-wrapper {
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: runwayStrut 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    z-index: 10;
-  }
+        /* Walking & Strutting Model Animation */
+        .runway-model-wrapper {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: runwayStrut 6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+            z-index: 10;
+        }
 
-  @keyframes runwayStrut {
-    0% {
-      bottom: 20px;
-      transform: translateX(-50%) scale(0.4);
-      filter: brightness(0.7);
-    }
-    60% {
-      bottom: 220px;
-      transform: translateX(-50%) scale(0.9) rotate(0deg);
-      filter: brightness(1.1);
-    }
-    75% {
-      /* Pause & Strike a Pose */
-      bottom: 240px;
-      transform: translateX(-50%) scale(1.0) rotate(-4deg);
-    }
-    90% {
-      bottom: 240px;
-      transform: translateX(-50%) scale(1.0) rotate(4deg);
-    }
-    100% {
-      bottom: 240px;
-      transform: translateX(-50%) scale(1.0) rotate(0deg);
-    }
-  }
+        @keyframes runwayStrut {
+            0% {
+                bottom: 20px;
+                transform: translateX(-50%) scale(0.4);
+                filter: brightness(0.7);
+            }
+            60% {
+                bottom: 220px;
+                transform: translateX(-50%) scale(0.9) rotate(0deg);
+                filter: brightness(1.1);
+            }
+            75% {
+                bottom: 240px;
+                transform: translateX(-50%) scale(1.0) rotate(-4deg);
+            }
+            90% {
+                bottom: 240px;
+                transform: translateX(-50%) scale(1.0) rotate(4deg);
+            }
+            100% {
+                bottom: 240px;
+                transform: translateX(-50%) scale(1.0) rotate(0deg);
+            }
+        }
 
-  /* Audience & Fans Row */
-  .audience-row {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 90px;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-end;
-    pointer-events: none;
-    z-index: 20;
-    padding: 0 10px;
-  }
+        /* Audience & Fans Row */
+        .audience-row {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 90px;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            pointer-events: none;
+            z-index: 20;
+            padding: 0 10px;
+        }
 
-  .fan-avatar {
-    font-size: 28px;
-    animation: fanCheer 0.6s ease-in-out infinite alternate;
-  }
+        .fan-avatar {
+            font-size: 28px;
+            animation: fanCheer 0.6s ease-in-out infinite alternate;
+        }
 
-  .fan-avatar:nth-child(even) {
-    animation-delay: 0.3s;
-    font-size: 24px;
-  }
+        .fan-avatar:nth-child(even) {
+            animation-delay: 0.3s;
+            font-size: 24px;
+        }
 
-  @keyframes fanCheer {
-    0% { transform: translateY(0px) rotate(-5deg); }
-    100% { transform: translateY(-12px) rotate(5deg); }
-  }
+        @keyframes fanCheer {
+            0% { transform: translateY(0px) rotate(-5deg); }
+            100% { transform: translateY(-12px) rotate(5deg); }
+        }
 
-  /* Camera Flashes from Crowd */
-  .camera-flash {
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 15px 5px white;
-    opacity: 0;
-    animation: flashPop 1.5s infinite ease-in-out;
-  }
+        /* Camera Flashes from Crowd */
+        .camera-flash {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px white;
+            opacity: 0;
+            animation: flashPop 1.5s infinite ease-in-out;
+        }
 
-  @keyframes flashPop {
-    0%, 100% { opacity: 0; transform: scale(0.5); }
-    50% { opacity: 1; transform: scale(1.2); }
-  }
-</style>
-
-<!-- HTML Structure for Runway -->
-<div class="runway-stage-container">
-  <div class="spotlights"></div>
-  
-  <!-- Perspective Catwalk Floor -->
-  <div class="catwalk-floor">
-    <div class="catwalk-stripe"></div>
-  </div>
-
-  <!-- Strutting Model -->
-  <div class="runway-model-wrapper" id="live-runway-avatar">
-    <!-- Your existing SVG Avatar code renders here -->
-  </div>
-
-  <!-- Random Camera Flashes -->
-  <div class="camera-flash" style="top: 45%; left: 35%; animation-delay: 0.2s;"></div>
-  <div class="camera-flash" style="top: 40%; left: 65%; animation-delay: 0.8s;"></div>
-  <div class="camera-flash" style="top: 50%; left: 48%; animation-delay: 1.1s;"></div>
-
-  <!-- Cheering Fans in Front Row -->
-  <div class="audience-row">
-    <span class="fan-avatar">🙋‍♀️</span>
-    <span class="fan-avatar">📸</span>
-    <span class="fan-avatar">🔥</span>
-    <span class="fan-avatar">👏</span>
-    <span class="fan-avatar">✨</span>
-    <span class="fan-avatar">🤩</span>
-    <span class="fan-avatar">💖</span>
-    <span class="fan-avatar">📱</span>
-  </div>
-
+        @keyframes flashPop {
+            0%, 100% { opacity: 0; transform: scale(0.5); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+    </style>
 </head>
 <body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between selection:bg-pink-500 selection:text-white">
 
@@ -215,7 +180,6 @@
     <header class="w-full bg-slate-900/80 backdrop-blur-md border-b border-slate-800 p-4 sticky top-0 z-30 flex justify-between items-center shadow-lg">
         <div class="flex items-center space-x-2">
             <div class="w-9 h-9 rounded-full bg-gradient-to-tr from-pink-500 to-violet-500 flex items-center justify-center shadow-md shadow-pink-500/20">
-                <i class="fa-solid font-sparkles text-white text-base"></i>
                 <span class="text-white text-lg font-black">✦</span>
             </div>
             <div>
@@ -241,7 +205,6 @@
         
         <!-- Left / Center: Avatar Display Stage -->
         <section class="md:col-span-6 lg:col-span-5 flex flex-col items-center justify-center bg-gradient-to-b from-slate-900 via-slate-900/90 to-slate-950 rounded-3xl p-4 border border-slate-800/80 shadow-2xl relative overflow-hidden min-h-[380px]">
-            <!-- Subtle Background Glow -->
             <div class="absolute w-64 h-64 bg-pink-500/10 rounded-full blur-3xl pointer-events-none"></div>
             <div class="absolute w-48 h-48 bg-purple-500/10 rounded-full blur-2xl pointer-events-none bottom-4"></div>
 
@@ -250,43 +213,24 @@
             </p>
 
             <!-- SVG Avatar Visualizer -->
-            <div class="relative w-full max-w-[280px] aspect-[3/4] flex items-center justify-center avatar-idle">
+            <div class="relative w-full max-w-[280px] aspect-[3/4] flex items-center justify-center">
                 <svg id="avatarSvg" viewBox="0 0 300 450" class="w-full h-full drop-shadow-2xl">
-                    <!-- Base Shadow -->
                     <ellipse cx="150" cy="420" rx="60" ry="10" fill="#000000" opacity="0.4" />
-
-                    <!-- Base Body Model -->
                     <g id="bodyGroup">
-                        <!-- Legs / Skin -->
                         <rect x="125" y="250" width="20" height="150" rx="10" fill="#f5d0c5" />
                         <rect x="155" y="250" width="20" height="150" rx="10" fill="#f5d0c5" />
-                        
-                        <!-- Base Feet -->
                         <ellipse cx="132" cy="400" rx="12" ry="6" fill="#e0b0a3" />
                         <ellipse cx="168" cy="400" rx="12" ry="6" fill="#e0b0a3" />
-
-                        <!-- Torso / Skin -->
                         <path d="M 120 120 Q 150 110 180 120 L 175 260 Q 150 265 125 260 Z" fill="#f5d0c5" />
-
-                        <!-- Neck & Head -->
                         <rect x="141" y="90" width="18" height="35" rx="8" fill="#f5d0c5" />
                         <ellipse cx="150" cy="80" rx="30" ry="36" fill="#f5d0c5" />
-
-                        <!-- Facial Features -->
                         <ellipse cx="138" cy="78" rx="3" ry="4" fill="#334155" />
                         <ellipse cx="162" cy="78" rx="3" ry="4" fill="#334155" />
-                        <!-- Lips -->
                         <path d="M 143 96 Q 150 102 157 96 Q 150 99 143 96 Z" fill="#e11d48" />
-
-                        <!-- Hair -->
                         <path d="M 115 80 C 115 30, 185 30, 185 80 C 185 95, 180 120, 180 140 C 175 110, 175 60, 150 60 C 125 60, 125 110, 120 140 C 120 120, 115 95, 115 80 Z" fill="#292524" />
-
-                        <!-- Arms -->
                         <path d="M 120 125 Q 105 180 108 220" stroke="#f5d0c5" stroke-width="14" stroke-linecap="round" fill="none" />
                         <path d="M 180 125 Q 195 180 192 220" stroke="#f5d0c5" stroke-width="14" stroke-linecap="round" fill="none" />
                     </g>
-
-                    <!-- DYNAMIC OUTFIT LAYERS -->
                     <g id="layerShoes"></g>
                     <g id="layerBottoms"></g>
                     <g id="layerTops"></g>
@@ -295,7 +239,6 @@
                 </svg>
             </div>
 
-            <!-- Current Look Tags Bar -->
             <div id="equippedTags" class="w-full flex flex-wrap justify-center gap-1.5 mt-3 min-h-[32px]">
                 <span class="text-[11px] text-slate-500 italic">No items selected</span>
             </div>
@@ -303,8 +246,6 @@
 
         <!-- Right: Studio Closet Selector -->
         <section class="md:col-span-6 lg:col-span-7 bg-slate-900/60 border border-slate-800 rounded-3xl p-4 flex flex-col h-[500px] md:h-auto">
-            
-            <!-- Category Tabs Navigation -->
             <nav class="flex space-x-1 border-b border-slate-800 pb-3 overflow-x-auto no-scrollbar">
                 <button onclick="switchCategory('tops')" id="tab-tops" class="category-tab px-4 py-2 rounded-xl text-xs font-bold transition-all bg-pink-500 text-white shadow-md shadow-pink-500/20 whitespace-nowrap flex items-center gap-2">
                     <i class="fa-solid fa-shirt"></i> Tops
@@ -323,10 +264,7 @@
                 </button>
             </nav>
 
-            <!-- Closet Grid Container -->
-            <div id="closetGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-2 mt-2 overflow-y-auto flex-1 pr-1">
-                <!-- Items will be generated dynamically by JS -->
-            </div>
+            <div id="closetGrid" class="grid grid-cols-2 sm:grid-cols-3 gap-3 p-2 mt-2 overflow-y-auto flex-1 pr-1"></div>
         </section>
 
     </main>
@@ -334,15 +272,6 @@
     <!-- RUNWAY SHOW FULLSCREEN MODAL -->
     <div id="runwayView" class="fixed inset-0 z-50 bg-slate-950 hidden flex-col justify-between overflow-hidden">
         
-        <!-- Animated Spotlights -->
-        <div class="absolute inset-0 pointer-events-none z-10">
-            <div class="absolute top-0 left-0 w-1/2 h-full spotlight-left"></div>
-            <div class="absolute top-0 right-0 w-1/2 h-full spotlight-right"></div>
-            <!-- Camera Flash Canvas Overlay -->
-            <div id="flashOverlay" class="absolute inset-0 pointer-events-none"></div>
-        </div>
-
-        <!-- Runway Top HUD Control -->
         <header class="relative z-30 p-4 flex justify-between items-center bg-gradient-to-b from-slate-950/90 to-transparent">
             <div class="flex items-center space-x-3">
                 <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-bold bg-pink-500/20 text-pink-400 border border-pink-500/30">
@@ -363,28 +292,38 @@
             </div>
         </header>
 
-        <!-- Audience Hype Floating Badges -->
-        <div id="hypeContainer" class="absolute inset-x-0 top-24 z-30 flex justify-center items-center pointer-events-none">
-            <!-- Dynamic reaction popups like "STUNNING!" -->
-        </div>
+        <!-- Audience Hype Floating Badges Container -->
+        <div id="hypeContainer" class="absolute inset-x-0 top-24 z-30 flex justify-center items-center pointer-events-none"></div>
 
-        <!-- Runway Stage / Perspective Track -->
+        <!-- Runway Stage Area -->
         <div class="relative flex-1 flex items-center justify-center z-20">
-            
-            <!-- Perspective Runway Floor -->
-            <div class="absolute bottom-0 w-full h-[65%] bg-gradient-to-t from-slate-900 via-purple-950/40 to-transparent flex justify-center">
-                <div class="w-2/3 h-full bg-gradient-to-t from-slate-800 via-pink-950/30 to-slate-900 border-x-2 border-pink-500/30 shadow-2xl transform perspective-1000 rotateX-45"></div>
-            </div>
+            <div class="runway-stage-container w-full h-full">
+                <div class="spotlights"></div>
+                <div class="catwalk-floor">
+                    <div class="catwalk-stripe"></div>
+                </div>
 
-            <!-- Avatar Walking on Runway Container -->
-            <div id="runwayAvatarContainer" class="relative z-20 w-64 h-96 flex items-center justify-center animate-walk">
-                <!-- SVG cloned here dynamically -->
+                <div class="runway-model-wrapper" id="live-runway-avatar"></div>
+
+                <div class="camera-flash" style="top: 45%; left: 35%; animation-delay: 0.2s;"></div>
+                <div class="camera-flash" style="top: 40%; left: 65%; animation-delay: 0.8s;"></div>
+                <div class="camera-flash" style="top: 50%; left: 48%; animation-delay: 1.1s;"></div>
+
+                <div class="audience-row">
+                    <span class="fan-avatar">🙋‍♀️</span>
+                    <span class="fan-avatar">📸</span>
+                    <span class="fan-avatar">🔥</span>
+                    <span class="fan-avatar">👏</span>
+                    <span class="fan-avatar">✨</span>
+                    <span class="fan-avatar">🤩</span>
+                    <span class="fan-avatar">💖</span>
+                    <span class="fan-avatar">📱</span>
+                </div>
             </div>
         </div>
 
-        <!-- Footer / Photographer Flash triggers -->
         <footer class="relative z-30 p-6 flex flex-col items-center justify-center bg-gradient-to-t from-slate-950 via-slate-950/80 to-transparent">
-            <p class="text-xs text-slate-400 font-medium tracking-wider mb-2">TAP RUNWAY TO CHEER</p>
+            <p class="text-xs text-slate-400 font-medium tracking-wider mb-2">TAP BUTTONS TO CHEER</p>
             <div class="flex gap-2">
                 <button onclick="triggerCheer('FIERCE! ✨')" class="px-3 py-1.5 bg-slate-800/90 hover:bg-pink-600 text-white text-xs font-semibold rounded-full border border-slate-700 transition-all active:scale-95">✨ FIERCE!</button>
                 <button onclick="triggerCheer('10/10! 🔥')" class="px-3 py-1.5 bg-slate-800/90 hover:bg-pink-600 text-white text-xs font-semibold rounded-full border border-slate-700 transition-all active:scale-95">🔥 10/10!</button>
@@ -394,7 +333,6 @@
     </div>
 
     <script>
-        // --- 1. CLOSET DATABASE (SVG Graphic definitions) ---
         const CLOSET_ITEMS = {
             tops: [
                 {
@@ -486,7 +424,7 @@
                 },
                 {
                     id: 'sho-2',
-                    name: 'Chunky Chunky Sneakers',
+                    name: 'Chunky Sneakers',
                     icon: '👟',
                     color: '#ffffff',
                     svg: `<rect x="118" y="390" width="26" height="22" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" />
@@ -524,21 +462,11 @@
             ]
         };
 
-        // --- 2. APP STATE ---
         let activeCategory = 'tops';
-        let equippedLook = {
-            tops: null,
-            bottoms: null,
-            dresses: null,
-            shoes: null,
-            accessories: null
-        };
+        let equippedLook = { tops: null, bottoms: null, dresses: null, shoes: null, accessories: null };
 
-        // --- 3. UI RENDERING & INTERACTION ---
         function switchCategory(category) {
             activeCategory = category;
-            
-            // Update Tab active styling
             document.querySelectorAll('.category-tab').forEach(tab => {
                 tab.className = 'category-tab px-4 py-2 rounded-xl text-xs font-bold transition-all text-slate-400 hover:text-slate-200 hover:bg-slate-800/80 whitespace-nowrap flex items-center gap-2';
             });
@@ -546,26 +474,20 @@
             if (activeTab) {
                 activeTab.className = 'category-tab px-4 py-2 rounded-xl text-xs font-bold transition-all bg-pink-500 text-white shadow-md shadow-pink-500/20 whitespace-nowrap flex items-center gap-2';
             }
-
             renderClosetGrid();
         }
 
         function renderClosetGrid() {
             const grid = document.getElementById('closetGrid');
             grid.innerHTML = '';
-
             const items = CLOSET_ITEMS[activeCategory] || [];
             items.forEach(item => {
                 const isEquipped = equippedLook[activeCategory]?.id === item.id;
-
                 const card = document.createElement('button');
                 card.onclick = () => toggleItem(activeCategory, item);
                 card.className = `p-3 rounded-2xl border flex flex-col items-center justify-between gap-2 transition-all duration-200 text-center relative group active:scale-95 ${
-                    isEquipped 
-                    ? 'bg-pink-500/10 border-pink-500 ring-2 ring-pink-500/40 shadow-lg shadow-pink-500/10' 
-                    : 'bg-slate-800/50 border-slate-700/60 hover:border-slate-600 hover:bg-slate-800'
+                    isEquipped ? 'bg-pink-500/10 border-pink-500 ring-2 ring-pink-500/40 shadow-lg shadow-pink-500/10' : 'bg-slate-800/50 border-slate-700/60 hover:border-slate-600 hover:bg-slate-800'
                 }`;
-
                 card.innerHTML = `
                     ${isEquipped ? '<span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-pink-500"></span>' : ''}
                     <div class="text-3xl my-1 group-hover:scale-110 transition-transform">${item.icon}</div>
@@ -579,24 +501,20 @@
         }
 
         function toggleItem(category, item) {
-            // Handle dress vs top/bottom conflict logic
             if (category === 'dresses') {
                 if (equippedLook.dresses?.id === item.id) {
                     equippedLook.dresses = null;
                 } else {
                     equippedLook.dresses = item;
-                    // Auto un-equip tops and bottoms when equipping full dress
                     equippedLook.tops = null;
                     equippedLook.bottoms = null;
                 }
             } else if (category === 'tops' || category === 'bottoms') {
-                // Un-equip dress if top or bottom selected
                 equippedLook.dresses = null;
                 equippedLook[category] = (equippedLook[category]?.id === item.id) ? null : item;
             } else {
                 equippedLook[category] = (equippedLook[category]?.id === item.id) ? null : item;
             }
-
             updateAvatarVisuals();
             renderClosetGrid();
         }
@@ -608,22 +526,18 @@
         }
 
         function updateAvatarVisuals() {
-            // Clear SVG layers
             ['layerTops', 'layerBottoms', 'layerDresses', 'layerShoes', 'layerAccessories'].forEach(layerId => {
                 document.getElementById(layerId).innerHTML = '';
             });
 
-            // Update DOM SVG with equipped items
             if (equippedLook.shoes) document.getElementById('layerShoes').innerHTML = equippedLook.shoes.svg;
             if (equippedLook.bottoms) document.getElementById('layerBottoms').innerHTML = equippedLook.bottoms.svg;
             if (equippedLook.tops) document.getElementById('layerTops').innerHTML = equippedLook.tops.svg;
             if (equippedLook.dresses) document.getElementById('layerDresses').innerHTML = equippedLook.dresses.svg;
             if (equippedLook.accessories) document.getElementById('layerAccessories').innerHTML = equippedLook.accessories.svg;
 
-            // Render Tags HUD
             const tagsContainer = document.getElementById('equippedTags');
             tagsContainer.innerHTML = '';
-            
             const activeItems = Object.values(equippedLook).filter(Boolean);
             
             if (activeItems.length === 0) {
@@ -638,7 +552,7 @@
             }
         }
 
-        // --- 4. WEB AUDIO SYNTHESIZER (Catwalk Synth Beat) ---
+        // Web Audio Synthesizer & Runway Control
         let audioCtx = null;
         let isPlayingAudio = false;
         let audioTimer = null;
@@ -650,12 +564,16 @@
             }
         }
 
-        function playSynthKick(time) {
+        function playSynthBeat() {
+            if (!audioCtx) return;
+            const time = audioCtx.currentTime;
+            
+            // Kick
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-            osc.frequency.setValueAtTime(120, time);
+            osc.frequency.setValueAtTime(100, time);
             osc.frequency.exponentialRampToValueAtTime(0.01, time + 0.3);
-            gain.gain.setValueAtTime(1, time);
+            gain.gain.setValueAtTime(0.8, time);
             gain.gain.exponentialRampToValueAtTime(0.01, time + 0.3);
             osc.connect(gain);
             gain.connect(audioCtx.destination);
@@ -663,130 +581,59 @@
             osc.stop(time + 0.3);
         }
 
-        function playHiHat(time) {
-            const bufferSize = audioCtx.sampleRate * 0.05;
-            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
-            const data = buffer.getChannelData(0);
-            for (let i = 0; i < bufferSize; i++) {
-                data[i] = Math.random() * 2 - 1;
-            }
-            const noise = audioCtx.createBufferSource();
-            noise.buffer = buffer;
-            const filter = audioCtx.createBiquadFilter();
-            filter.type = 'highpass';
-            filter.frequency.value = 7000;
-            const gain = audioCtx.createGain();
-            gain.gain.setValueAtTime(0.3, time);
-            gain.gain.exponentialRampToValueAtTime(0.01, time + 0.05);
-            noise.connect(filter);
-            filter.connect(gain);
-            gain.connect(audioCtx.destination);
-            noise.start(time);
-        }
-
-        function startCatwalkMusic() {
-            initAudio();
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-            isPlayingAudio = true;
-            document.getElementById('audioIcon').className = 'fa-solid fa-volume-high text-pink-400';
-
-            let step = 0;
-            const tempo = 124; // Fashion BPM
-            const stepTime = (60 / tempo) / 4;
-
-            function scheduleLoop() {
-                if (!isPlayingAudio) return;
-                const now = audioCtx.currentTime;
-                for (let i = 0; i < 16; i++) {
-                    const time = now + (i * stepTime);
-                    // Kick drum on 1, 5, 9, 13
-                    if (i % 4 === 0) playSynthKick(time);
-                    // Hi-hats on off-beats
-                    if (i % 2 === 1) playHiHat(time);
-                }
-                audioTimer = setTimeout(scheduleLoop, stepTime * 16 * 1000);
-            }
-            scheduleLoop();
-        }
-
-        function stopCatwalkMusic() {
-            isPlayingAudio = false;
-            if (audioTimer) clearTimeout(audioTimer);
-            document.getElementById('audioIcon').className = 'fa-solid fa-volume-xmark text-slate-400';
-        }
-
         function toggleAudio() {
+            initAudio();
+            isPlayingAudio = !isPlayingAudio;
+            const icon = document.getElementById('audioIcon');
+            
             if (isPlayingAudio) {
-                stopCatwalkMusic();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                icon.className = 'fa-solid fa-volume-high text-pink-400';
+                audioTimer = setInterval(playSynthBeat, 500);
             } else {
-                startCatwalkMusic();
+                icon.className = 'fa-solid fa-volume-xmark text-slate-400';
+                clearInterval(audioTimer);
             }
         }
-
-        // --- 5. RUNWAY SHOW LOGIC ---
-        let flashInterval = null;
 
         function launchRunway() {
             const runwayView = document.getElementById('runwayView');
-            const runwayAvatarContainer = document.getElementById('runwayAvatarContainer');
-            
-            // Clone Avatar SVG to Runway View
-            const avatarSvg = document.getElementById('avatarSvg').cloneNode(true);
-            runwayAvatarContainer.innerHTML = '';
-            runwayAvatarContainer.appendChild(avatarSvg);
-
             runwayView.classList.remove('hidden');
             runwayView.classList.add('flex');
 
-            // Start Audio & Camera Flashes
-            startCatwalkMusic();
-            startCameraFlashes();
-            triggerCheer('WORK IT! ✨');
+            // Clone current avatar into runway container
+            const mainSvg = document.getElementById('avatarSvg').cloneNode(true);
+            mainSvg.id = 'runwayAvatarSvg';
+            const runwayContainer = document.getElementById('live-runway-avatar');
+            runwayContainer.innerHTML = '';
+            runwayContainer.appendChild(mainSvg);
+
+            // Auto-start music beat on runway launch
+            if (!isPlayingAudio) {
+                toggleAudio();
+            }
         }
 
         function closeRunway() {
             const runwayView = document.getElementById('runwayView');
-            runwayView.classList.add('hidden');
             runwayView.classList.remove('flex');
-
-            stopCatwalkMusic();
-            if (flashInterval) clearInterval(flashInterval);
+            runwayView.classList.add('hidden');
+            if (isPlayingAudio) {
+                toggleAudio();
+            }
         }
 
-        function startCameraFlashes() {
-            if (flashInterval) clearInterval(flashInterval);
-            const overlay = document.getElementById('flashOverlay');
-
-            flashInterval = setInterval(() => {
-                if (Math.random() > 0.4) {
-                    const flash = document.createElement('div');
-                    flash.className = 'absolute inset-0 camera-flash pointer-events-none';
-                    overlay.appendChild(flash);
-                    setTimeout(() => flash.remove(), 300);
-                }
-            }, 600);
-        }
-
-        function triggerCheer(text) {
+        function triggerCheer(message) {
             const container = document.getElementById('hypeContainer');
             const badge = document.createElement('div');
-            badge.className = 'px-5 py-2 rounded-full bg-gradient-to-r from-pink-500 to-purple-600 text-white font-extrabold text-lg sm:text-2xl shadow-2xl animate-pop border border-white/20 tracking-wider';
-            badge.innerText = text;
-
-            container.innerHTML = '';
+            badge.className = 'px-4 py-2 rounded-full bg-pink-500 text-white font-black text-sm shadow-2xl animate-bounce tracking-wider border-2 border-white/40';
+            badge.textContent = message;
             container.appendChild(badge);
-            setTimeout(() => {
-                badge.remove();
-            }, 1800);
+            setTimeout(() => badge.remove(), 1200);
         }
 
-        // --- 6. INITIALIZATION ---
-        window.onload = () => {
-            switchCategory('tops');
-            updateAvatarVisuals();
-        };
+        // Initialize empty closet grid on startup
+        renderClosetGrid();
     </script>
 </body>
 </html>
